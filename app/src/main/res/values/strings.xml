@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PrivacyMonitor</string>
+    <string name="xposed_description">用于监测app使用过程中用到的涉及到用户隐私相关的API</string>
+</resources>
