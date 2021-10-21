@@ -145,31 +145,31 @@ INFO:	HookMethod{clazz=class android.app.AppOpsManager, method='setUserRestricti
 ```
 
 - 检查隐私方法调用堆栈日志
-    ```
-    INFO:	2021-08-12 15:37:05:412; com.tencent.qqlive:xg_vip_service; 后台; Method=WifiInfo#getBSSID;
-    com.tencent.qqlive.utils.AppNetworkUtils.getNetInfo(AppNetworkUtils.java:16)
-    com.tencent.qqlive.utils.AppNetworkUtils.<clinit>(AppNetworkUtils.java:1)
-    com.tencent.qqlive.utils.AppNetworkUtils.setAppContext(AppNetworkUtils.java:1)
-    com.tencent.qqlive.route.RouteConfig.setContext(RouteConfig.java:3)
-    com.tencent.qqlive.network.NetworkConfig.setupRoute(NetworkConfig.java:1)
-    com.tencent.qqlive.network.NetworkConfig.setup(NetworkConfig.java:12)
-    com.tencent.qqlive.network.NetworkConfig.setup(NetworkConfig.java:2)
-    com.tencent.qqlive.component.network.NetworkModuleConfig.init(NetworkModuleConfig.java:20)
-    com.tencent.qqlive.ona.base.OtherProcApplication.attachBaseContext(OtherProcApplication.java:10)
-    com.tencent.qqlive.ona.base.initializer.jobs.OtherProcInitJob.run(OtherProcInitJob.java:1)
-    com.tencent.qqlive.ona.base.initializer.AppInitializer.executeAppAttachContextJobs(AppInitializer.java:8)
-    com.tencent.qqlive.ona.base.QQLiveApplicationWrapperImpl.doInit(QQLiveApplicationWrapperImpl.java:5)
-    com.tencent.qqlive.ona.base.QQLiveApplicationWrapper.attachInit(QQLiveApplicationWrapper.java:3)
-    com.tencent.qqlive.ona.base.QQLiveApplicationWrapper.a(QQLiveApplicationWrapper.java:2)
-    d.w.b.u.e.g.run(lambda)
-    com.tencent.qqlive.ona.base.launchmonitor.AppLaunchMonitor.simpleMainProcessTick(AppLaunchMonitor.java:3)
-    com.tencent.qqlive.ona.base.QQLiveApplicationWrapper.doAttachBaseContext(QQLiveApplicationWrapper.java:7)
-    com.tencent.qqlive.ona.base.QQLiveApplicationWrapper.attachBaseContext(QQLiveApplicationWrapper.java:27)
-    com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:999)
-    com.android.internal.os.ZygoteInit.main(ZygoteInit.java:889)
-    ```
-- 监控所有进程的文件访问记录
+```java
+INFO:	2021-08-12 15:37:05:412; com.tencent.qqlive:xg_vip_service; 后台; Method=WifiInfo#getBSSID;
+com.tencent.qqlive.utils.AppNetworkUtils.getNetInfo(AppNetworkUtils.java:16)
+com.tencent.qqlive.utils.AppNetworkUtils.<clinit>(AppNetworkUtils.java:1)
+com.tencent.qqlive.utils.AppNetworkUtils.setAppContext(AppNetworkUtils.java:1)
+com.tencent.qqlive.route.RouteConfig.setContext(RouteConfig.java:3)
+com.tencent.qqlive.network.NetworkConfig.setupRoute(NetworkConfig.java:1)
+com.tencent.qqlive.network.NetworkConfig.setup(NetworkConfig.java:12)
+com.tencent.qqlive.network.NetworkConfig.setup(NetworkConfig.java:2)
+com.tencent.qqlive.component.network.NetworkModuleConfig.init(NetworkModuleConfig.java:20)
+com.tencent.qqlive.ona.base.OtherProcApplication.attachBaseContext(OtherProcApplication.java:10)
+com.tencent.qqlive.ona.base.initializer.jobs.OtherProcInitJob.run(OtherProcInitJob.java:1)
+com.tencent.qqlive.ona.base.initializer.AppInitializer.executeAppAttachContextJobs(AppInitializer.java:8)
+com.tencent.qqlive.ona.base.QQLiveApplicationWrapperImpl.doInit(QQLiveApplicationWrapperImpl.java:5)
+com.tencent.qqlive.ona.base.QQLiveApplicationWrapper.attachInit(QQLiveApplicationWrapper.java:3)
+com.tencent.qqlive.ona.base.QQLiveApplicationWrapper.a(QQLiveApplicationWrapper.java:2)
+d.w.b.u.e.g.run(lambda)
+com.tencent.qqlive.ona.base.launchmonitor.AppLaunchMonitor.simpleMainProcessTick(AppLaunchMonitor.java:3)
+com.tencent.qqlive.ona.base.QQLiveApplicationWrapper.doAttachBaseContext(QQLiveApplicationWrapper.java:7)
+com.tencent.qqlive.ona.base.QQLiveApplicationWrapper.attachBaseContext(QQLiveApplicationWrapper.java:27)
+com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:999)
+com.android.internal.os.ZygoteInit.main(ZygoteInit.java:889)
 ```
+- 监控所有进程的文件访问记录
+```java
 INFO:	/data/user/0/com.tencent.qqlive/shared_prefs
 com.tencent.qapmsdk.impl.appstate.b.n(AppStateTimeInfo.java:2)
 com.tencent.qapmsdk.impl.appstate.b.a(AppStateTimeInfo.java:9)
